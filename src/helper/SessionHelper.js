@@ -9,6 +9,13 @@ class SessionHelper {
         return localStorage.getItem("token");
     }
 
+    setUserDetails(UserDetails){
+        localStorage.setItem("UserDetails",JSON.stringify(UserDetails))
+    }
+    getUserDetails(){
+        return JSON.parse(localStorage.getItem("UserDetails"))
+    }
+
     logout(){
         localStorage.clear();
         window.location.href="/login"
@@ -17,4 +24,4 @@ class SessionHelper {
 }
 
 
-export const {setToken, getToken, logout} = new SessionHelper();
+export const {setToken, getToken, setUserDetails, getUserDetails, logout} = new SessionHelper();

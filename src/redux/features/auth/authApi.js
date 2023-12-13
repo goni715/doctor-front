@@ -1,6 +1,6 @@
 import {apiSlice} from "../api/apiSlice.js";
 import {ErrorToast, SuccessToast} from "../../../helper/ValidationHelper.js";
-import {setToken} from "../../../helper/SessionHelper.js";
+import {setToken, setUserDetails} from "../../../helper/SessionHelper.js";
 import {HideLoading, ShowLoading} from "./authSlice.js";
 
 
@@ -47,6 +47,13 @@ export const authApi = apiSlice.injectEndpoints({
                     if(res?.data?.message === "success"){
                         let MyToken = res.data['token'];
                         setToken(MyToken);
+                        let user = res.data['result']; //This is Object
+                        let userDetails = {
+                            name: user['name'],
+                            email: user['email'],
+                            isAdmin: user['isAdmin'],
+                        }
+                        setUserDetails(userDetails);
                         SuccessToast("Login Success");
                     }
 

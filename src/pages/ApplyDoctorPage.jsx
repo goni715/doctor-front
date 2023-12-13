@@ -1,10 +1,11 @@
 import Layout from "../components/Layout.jsx";
+import ApplyDoctor from "../components/ApplyDoctor.jsx";
 
 const ApplyDoctorPage = () => {
     return (
         <>
             <Layout>
-                <h1>This is Apply Doctor Page</h1>
+                <ApplyDoctor/>
             </Layout>
         </>
     );
