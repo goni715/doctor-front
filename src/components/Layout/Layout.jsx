@@ -8,7 +8,7 @@ const Layout = ({children}) => {
     return (
         <>
             <MobileNav/>
-            <div className="p-0 h-screen pt-[100px] md:pt-0">
+            <div className="p-0 h-screen pt-[80px] md:pt-0">
                 <div className="layout flex gap-6">
                     <Sidebar/>
 

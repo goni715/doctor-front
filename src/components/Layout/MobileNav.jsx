@@ -1,7 +1,7 @@
-import {getUserDetails, logout} from "../helper/SessionHelper.js";
+import {getUserDetails, logout} from "../../helper/SessionHelper.js";
 import {MdOutlineLogout} from "react-icons/md";
 import {Link, useLocation, useNavigate} from "react-router-dom";
-import {adminMenu, userMenu} from "../Data/data.js";
+import {adminMenu, userMenu} from "../../Data/data.js";
 import {IoMdClose} from "react-icons/io";
 import {GiHamburgerMenu} from "react-icons/gi";
 import {useState} from "react";
@@ -20,9 +20,9 @@ const MobileNav = () => {
     }
 
 
-    const handleMenuClick = () => {
-        setOpen(false);
-    }
+    // const handleMenuClick = () => {
+    //     setOpen(false);
+    // }
 
     const handleNavigate = (to) => {
         navigate(to);
@@ -46,8 +46,8 @@ const MobileNav = () => {
                         }
                         <span className="mobile-nav-title text-[#f29f67] font-bold capitalize text-xl ml-5">DOC APP</span>
                     </div>
-                    <div className="content-header flex items-center pr-5 gap-5">
-                        <Badge  count={5}>
+                    <div className="content-header flex items-center pr-2 gap-5">
+                        <Badge onClick={()=>navigate("/notification")} count={5}>
                             <FaBell className="cursor-pointer text-white" size={20} />
                         </Badge>
                         <Link to="/profile" className="uppercase text-white">

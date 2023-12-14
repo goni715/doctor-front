@@ -1,7 +1,7 @@
-import {getUserDetails, logout} from "../helper/SessionHelper.js";
+import {getUserDetails, logout} from "../../helper/SessionHelper.js";
 import {MdOutlineLogout} from "react-icons/md";
 import {useLocation, useNavigate} from "react-router-dom";
-import {adminMenu, userMenu} from "../Data/data.js";
+import {adminMenu, userMenu} from "../../Data/data.js";
 
 const Sidebar = () => {
     const navigate = useNavigate();
@@ -19,7 +19,7 @@ const Sidebar = () => {
     return (
         <>
             {/*Side Bar part*/}
-            <div className="sidebar hidden md:block ml-8 bg-[#330101] min-h-screen w-[300px] shadow-lg rounded-md text-white">
+            <div className="sidebar hidden md:block bg-[#330101] min-h-screen w-[300px] shadow-lg rounded-md text-white">
                 <div className="logo p-4">
                     <h6 className="text-center text-xl font-bold">DOC APP</h6>
                 </div>

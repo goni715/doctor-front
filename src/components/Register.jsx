@@ -1,7 +1,6 @@
 import {useEffect, useState} from "react";
 import {useRegisterMutation} from "../redux/features/auth/authApi.js";
 import {useNavigate} from "react-router-dom";
-import Spinner from "./Spinner.jsx";
 
 const Register = () => {
     const [name, setName] = useState("");
@@ -74,7 +73,9 @@ const Register = () => {
 
                     <div className="flex items-center flex-wrap">
                         <span onClick={()=>navigate('/login')} className="text-primary underline cursor-pointer">Already user login here</span>
-                        <button className="ml-3 bg-primary px-3 py-2 text-white font-bold text-md rounded-md max-[370px]:mt-3" disabled={isLoading}>Register</button>
+                        <button className="ml-3 bg-primary px-3 py-2 text-white font-bold text-md rounded-md max-[370px]:mt-3" disabled={isLoading}>
+                            {isLoading ? "Processing..." : "Register"}
+                        </button>
                     </div>
                     </form>
                 </div>

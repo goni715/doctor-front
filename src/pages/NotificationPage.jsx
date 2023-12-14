@@ -1,13 +1,13 @@
 import Layout from "../components/Layout/Layout.jsx";
 
-const AppointmentPage = () => {
+const NotificationPage = () => {
     return (
         <>
             <Layout>
-                <h1>This is Appointment Page</h1>
+                <h1>Notification Page</h1>
             </Layout>
         </>
     );
 };
 
-export default AppointmentPage;
+export default NotificationPage;

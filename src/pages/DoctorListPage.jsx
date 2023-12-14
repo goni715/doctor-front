@@ -1,13 +1,13 @@
 import Layout from "../components/Layout/Layout.jsx";
 
-const AppointmentPage = () => {
+const DoctorListPage = () => {
     return (
         <>
             <Layout>
-                <h1>This is Appointment Page</h1>
+                <h1>DoctorList</h1>
             </Layout>
         </>
     );
 };
 
-export default AppointmentPage;
+export default DoctorListPage;

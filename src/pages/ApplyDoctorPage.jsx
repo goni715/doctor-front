@@ -1,4 +1,4 @@
-import Layout from "../components/Layout.jsx";
+import Layout from "../components/Layout/Layout.jsx";
 import ApplyDoctor from "../components/ApplyDoctor.jsx";
 
 const ApplyDoctorPage = () => {
