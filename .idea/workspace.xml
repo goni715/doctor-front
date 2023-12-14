@@ -6,17 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="03f38bb9-050b-46e0-9d06-7bc984171fb4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Layout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MobileNav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/MobileNav.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Register.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Sidebar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ApplyDoctorPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ApplyDoctorPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AppointmentPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppointmentPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ApplyDoctor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ApplyDoctor.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/features/api/apiSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/features/api/apiSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/features/auth/authApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/features/auth/authApi.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +79,11 @@
       <workItem from="1702494190930" duration="19000" />
       <workItem from="1702499340867" duration="988000" />
       <workItem from="1702525627707" duration="2112000" />
-      <workItem from="1702529020487" duration="1253000" />
+      <workItem from="1702529020487" duration="1933000" />
+      <workItem from="1702533829701" duration="293000" />
+      <workItem from="1702539480028" duration="1545000" />
+      <workItem from="1702542131039" duration="866000" />
+      <workItem from="1702543443548" duration="358000" />
     </task>
     <servers />
   </component>

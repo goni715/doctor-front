@@ -58,7 +58,6 @@ export const authApi = apiSlice.injectEndpoints({
                     }
 
 
-
                     setTimeout(()=>{
                         //window.location.href="/inbox";
                     },200)
