@@ -7,7 +7,7 @@ const Header = () => {
     const user = getUserDetails();
     return (
         <>
-            <div className="p-5 mb-5 bg-green-100 border h-[10vh] content-header flex items-center justify-end pr-5 gap-5">
+            <div className="p-5 hidden md:block mb-5 bg-green-100 border h-[10vh] content-header flex items-center justify-end pr-5 gap-5">
                 <Badge  count={5}>
                     <FaBell className="cursor-pointer" size={20} />
                 </Badge>

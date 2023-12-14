@@ -1,14 +1,15 @@
 import Sidebar from "./Sidebar.jsx";
 import Header from "./Header.jsx";
+import MobileNav from "./MobileNav.jsx";
 
 const Layout = ({children}) => {
 
 
     return (
         <>
-            <div className="p-0 h-screen">
+            <MobileNav/>
+            <div className="p-0 h-screen pt-[100px] md:pt-0">
                 <div className="layout flex gap-6">
-
                     <Sidebar/>
 
                     {/*Content*/}
