@@ -1,10 +1,11 @@
 import Layout from "../components/Layout/Layout.jsx";
+import UserList from "../components/UserList.jsx";
 
 const UserListPage = () => {
     return (
         <>
           <Layout>
-              <h1>User List</h1>
+              <UserList/>
           </Layout>
         </>
     );
