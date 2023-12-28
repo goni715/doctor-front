@@ -61,7 +61,7 @@ const MobileNav = () => {
                 {
                     open && (
                         <>
-                            <div className="mobile-nav md:hidden bg-[#330101] min-h-screen w-[300px] shadow-lg rounded-md text-white">
+                            <div className="mobile-nav md:hidden bg-[#330101] min-h-screen w-[300px] shadow-lg text-white">
 
                                 <div className="side-menu px-3 flex flex-col gap-8 py-10">
                                     {SidebarMenu.map((item,i)=>{

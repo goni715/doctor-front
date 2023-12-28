@@ -1,10 +1,11 @@
 import Layout from "../components/Layout/Layout.jsx";
+import Notification from "../components/Notification.jsx";
 
 const NotificationPage = () => {
     return (
         <>
             <Layout>
-                <h1>Notification Page</h1>
+                <Notification/>
             </Layout>
         </>
     );

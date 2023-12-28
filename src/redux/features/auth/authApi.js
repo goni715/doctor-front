@@ -1,6 +1,6 @@
 import {apiSlice} from "../api/apiSlice.js";
 import {ErrorToast, SuccessToast} from "../../../helper/ValidationHelper.js";
-import {setToken, setUserDetails} from "../../../helper/SessionHelper.js";
+import {setNotification, setToken, setUserDetails} from "../../../helper/SessionHelper.js";
 import {HideLoading, ShowLoading} from "./authSlice.js";
 
 
@@ -51,8 +51,9 @@ export const authApi = apiSlice.injectEndpoints({
                         let userDetails = {
                             name: user['name'],
                             email: user['email'],
-                            isAdmin: user['isAdmin'],
+                            isAdmin: user['isAdmin']
                         }
+                        setNotification(user['notification'].length)
                         setUserDetails(userDetails);
                         SuccessToast("Login Success");
                     }

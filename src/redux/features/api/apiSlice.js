@@ -24,6 +24,7 @@ export const apiSlice = createApi({
         }
         return result;
     },
+    tagTypes: ["Profile"], //TagS WhiteLists
     endpoints: (builder) => ({}),
 })
 
