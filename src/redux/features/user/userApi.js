@@ -37,7 +37,7 @@ export const userApi = apiSlice.injectEndpoints({
         }),
         markAllRead: builder.mutation({
             query: () => ({
-                url: "/user/get-all-notification",
+                url: "/user/mark-all-read-notification",
                 method: "PUT",
             }),
             invalidatesTags: ["Profile"],
@@ -55,7 +55,7 @@ export const userApi = apiSlice.injectEndpoints({
         }),
         deleteAllRead: builder.mutation({
             query: () => ({
-                url: "/user/delete-all-notification",
+                url: "/user/delete-all-read-notification",
                 method: "PUT",
             }),
             invalidatesTags: ["Profile"],
@@ -63,7 +63,7 @@ export const userApi = apiSlice.injectEndpoints({
                 try{
                     const res = await queryFulfilled;
                     if(res?.data?.message==="success"){
-                        SuccessToast("Mark all Read Success");
+                        SuccessToast("Notifications Deleted successfully");
                     }
                 }catch(err) {
                     ErrorToast("Something went wrong!")

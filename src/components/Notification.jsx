@@ -1,5 +1,4 @@
 import {Tabs} from "antd";
-import {getUserDetails} from "../helper/SessionHelper.js";
 import {
     useDeleteAllReadMutation,
     useGetMyProfileQuery,
@@ -17,14 +16,18 @@ const Notification = () => {
 
     // handle read notification
     const handleMarkAllRead = () => {
-        markAllRead();
+        if(user?.notification.length > 0) {
+            markAllRead();
+        }
     }
 
 
 
     // delete notifications
     const handleDeleteAllRead = () => {
-        deleteAllRead();
+        if(user?.seenNotification.length > 0) {
+            deleteAllRead();
+        }
     }
 
 
@@ -44,7 +47,7 @@ const Notification = () => {
                             user?.notification.map((item,i)=>{
                                 return(
                                     <>
-                                        <div className="cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md">
+                                        <div key={i.toString()} className="cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md">
                                             <div onClick={() => navigate(item?.data?.onClickPath)} className="text-lg font-semibold">
                                                 {item?.message}
                                             </div>
@@ -73,7 +76,7 @@ const Notification = () => {
                         user?.seenNotification.map((item,i)=>{
                             return(
                                 <>
-                                    <div className="cursor-pointer bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-lg shadow-md">
+                                    <div key={i.toString()} className="cursor-pointer bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-lg shadow-md">
                                         <div onClick={() => navigate(item?.data?.onClickPath)} className="text-lg font-semibold">
                                             {item?.message}
                                         </div>
