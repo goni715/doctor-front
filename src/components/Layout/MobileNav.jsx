@@ -1,4 +1,4 @@
-import {getUserDetails, logout} from "../../helper/SessionHelper.js";
+import {getNotification, getUserDetails, logout} from "../../helper/SessionHelper.js";
 import {MdOutlineLogout} from "react-icons/md";
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import {adminMenu, userMenu} from "../../Data/data.js";
@@ -29,6 +29,7 @@ const MobileNav = () => {
     }
 
     const user = getUserDetails();
+    const notification = getNotification();
     const SidebarMenu = user?.isAdmin ? adminMenu : userMenu;
 
 
@@ -47,7 +48,7 @@ const MobileNav = () => {
                         <span className="mobile-nav-title text-[#f29f67] font-bold capitalize text-xl ml-5">DOC APP</span>
                     </div>
                     <div className="content-header flex items-center pr-2 gap-5">
-                        <Badge onClick={()=>navigate("/notification")} count={5}>
+                        <Badge onClick={()=>navigate("/notification")} count={notification || 0}>
                             <FaBell className="cursor-pointer text-white" size={20} />
                         </Badge>
                         <Link to="/profile" className="uppercase text-white">

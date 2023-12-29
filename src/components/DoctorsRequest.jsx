@@ -76,7 +76,7 @@ const DoctorsRequest = () => {
                                     disabled={Loading}
                                     onClick={()=>handleClick(doctors[i]._id)}
                                     className="px-4 py-2 rounded-md bg-green-500 text-white font-bold text-md hover:bg-green-600 focus:outline-none focus:shadow-outline-green active:bg-green-800">
-                                    {Loading ? "Processing..." : "Approve"}
+                                    Approve
                                 </button>
                             ) : (
                                 <button

@@ -6,14 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="03f38bb9-050b-46e0-9d06-7bc984171fb4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/data.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/DoctorList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DoctorList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DoctorsRequest.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DoctorsRequest.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/MobileNav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/MobileNav.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UserList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/DoctorListPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/DoctorListPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/features/api/apiSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/features/api/apiSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/features/doctor/doctorApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/features/doctor/doctorApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/features/user/userApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/features/user/userApi.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +106,9 @@
       <workItem from="1703873618952" duration="1111000" />
       <workItem from="1703876590664" duration="15000" />
       <workItem from="1703877399073" duration="164000" />
-      <workItem from="1703877993037" duration="2010000" />
+      <workItem from="1703877993037" duration="2285000" />
+      <workItem from="1703880916824" duration="152000" />
+      <workItem from="1703881170466" duration="371000" />
     </task>
     <servers />
   </component>

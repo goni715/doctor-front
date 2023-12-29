@@ -53,7 +53,7 @@ const DoctorList = () => {
                 key: Number(i + 1),
                 name: doctors[i].firstName+" "+doctors[i].lastName,
                 email: doctors[i].email,
-                phone: doctors[0].phone,
+                phone: doctors[i].phone,
                 action: (
                     <>
                         <div className="d-flex">

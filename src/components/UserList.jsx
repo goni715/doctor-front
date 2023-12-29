@@ -52,7 +52,7 @@ const UserList = () => {
                 key: Number(i + 1),
                 name: users[i].name,
                 email: users[i].email,
-                isDoctor: users[0].isDoctor ? "Yes" : "No",
+                isDoctor: users[i].isDoctor ? "Yes" : "No",
                 action: (
                     <>
                         <button className="ml-3 bg-red-500 hover:bg-red-700 px-3 py-2 text-white font-bold text-md rounded-md">
