@@ -1,6 +1,11 @@
-import {useGetUsersQuery} from "../redux/features/user/userApi.js";
 import {Table} from "antd";
-import {useGetDoctorsQuery} from "../redux/features/doctor/doctorApi.js";
+import {
+    useApproveDoctorMutation,
+    useGetDoctorsQuery,
+    useGetDoctorsRequestQuery
+} from "../redux/features/doctor/doctorApi.js";
+import {useLoginMutation} from "../redux/features/auth/authApi.js";
+import {SuccessToast} from "../helper/ValidationHelper.js";
 
 const columns = [
     {
@@ -12,8 +17,8 @@ const columns = [
         dataIndex: "name",
     },
     {
-        title: "Email",
-        dataIndex: "email",
+        title: "Status",
+        dataIndex: "status",
     },
     {
         title: "Phone",
@@ -25,9 +30,18 @@ const columns = [
     },
 ];
 
-const DoctorList = () => {
-    const {data, isLoading, isError, error} = useGetDoctorsQuery();
+const DoctorsRequest = () => {
+    const {data, isLoading, isError, error} = useGetDoctorsRequestQuery();
     const doctors = data?.data || [];
+    const [approveDoctor, {isLoading:Loading, isSuccess}] = useApproveDoctorMutation();
+
+    const handleClick = (id) => {
+        approveDoctor({
+            doctorId:id,
+            status:"approved"
+        })
+    }
+
 
 
     //decision how to render
@@ -52,19 +66,21 @@ const DoctorList = () => {
             tableData.push({
                 key: Number(i + 1),
                 name: doctors[i].firstName+" "+doctors[i].lastName,
-                email: doctors[i].email,
-                phone: doctors[0].phone,
+                status: doctors[i].status,
+                phone: doctors[i].phone,
                 action: (
                     <>
                         <div className="d-flex">
                             {doctors[i].status === "pending" ? (
                                 <button
+                                    disabled={Loading}
+                                    onClick={()=>handleClick(doctors[i]._id)}
                                     className="px-4 py-2 rounded-md bg-green-500 text-white font-bold text-md hover:bg-green-600 focus:outline-none focus:shadow-outline-green active:bg-green-800">
-                                    Approve
+                                    {Loading ? "Processing..." : "Approve"}
                                 </button>
                             ) : (
                                 <button
-                                    className="px-4 py-2 rounded-md bg-red-500 text-white font-bold text-md hover:bg-red-600 focus:outline-none focus:shadow-outline-red active:bg-red-800">
+                                    className="px-4 py-2 rounded bg-red-500 text-white hover:bg-red-600 focus:outline-none focus:shadow-outline-red active:bg-red-800">
                                     Reject
                                 </button>
                             )}
@@ -83,7 +99,7 @@ const DoctorList = () => {
         <>
             {content}
             <div>
-                <h1 className="text-center text-2xl mb-3">Doctor List</h1>
+                <h1 className="text-center text-2xl mb-3">Doctors Request</h1>
                 <div className="w-auto overflow-x-auto">
                     <Table columns={columns} dataSource={tableData} />
                 </div>
@@ -92,4 +108,4 @@ const DoctorList = () => {
     );
 };
 
-export default DoctorList;
+export default DoctorsRequest;

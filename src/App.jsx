@@ -10,6 +10,7 @@ import PublicRoute from "./routes/PublicRoute.jsx";
 import DoctorListPage from "./pages/DoctorListPage.jsx";
 import UserListPage from "./pages/UserListPage.jsx";
 import NotificationPage from "./pages/NotificationPage.jsx";
+import DoctorsRequestPage from "./pages/DoctorsRequestPage.jsx";
 
 
 
@@ -26,6 +27,7 @@ const App = () => {
                      <Route path="/apply-doctor" element={<PrivateRoute> <ApplyDoctorPage/> </PrivateRoute>} />
                      <Route path="/profile" element={<PrivateRoute> <ProfilePage/> </PrivateRoute>} />
                      <Route path="/admin/doctors" element={<PrivateRoute> <DoctorListPage/> </PrivateRoute>} />
+                     <Route path="/admin/doctors-request" element={<PrivateRoute> <DoctorsRequestPage/> </PrivateRoute>} />
                      <Route path="/admin/users" element={<PrivateRoute> <UserListPage/> </PrivateRoute>} />
                      <Route path="/admin/users" element={<PrivateRoute> <UserListPage/> </PrivateRoute>} />
                      <Route path="/notification" element={<PrivateRoute> <NotificationPage/> </PrivateRoute>} />

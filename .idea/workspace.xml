@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="03f38bb9-050b-46e0-9d06-7bc984171fb4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Notification.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Notification.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DoctorList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DoctorList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UserList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/DoctorListPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/DoctorListPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/features/api/apiSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/features/api/apiSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/features/doctor/doctorApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/features/doctor/doctorApi.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/features/user/userApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/features/user/userApi.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,6 +102,15 @@
       <workItem from="1703822120437" duration="16000" />
       <workItem from="1703822379108" duration="179000" />
       <workItem from="1703822584478" duration="264000" />
+      <workItem from="1703823115318" duration="305000" />
+      <workItem from="1703868372139" duration="123000" />
+      <workItem from="1703868587511" duration="203000" />
+      <workItem from="1703869391900" duration="58000" />
+      <workItem from="1703869612631" duration="1072000" />
+      <workItem from="1703873618952" duration="1111000" />
+      <workItem from="1703876590664" duration="15000" />
+      <workItem from="1703877399073" duration="164000" />
+      <workItem from="1703877993037" duration="2010000" />
     </task>
     <servers />
   </component>

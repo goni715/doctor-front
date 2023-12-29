@@ -26,7 +26,7 @@ const columns = [
 
 const UserList = () => {
     const {data, isLoading, isError, error} = useGetUsersQuery();
-    const users = data?.result || [];
+    const users = data?.data || [];
 
 
     //decision how to render

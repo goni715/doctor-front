@@ -6,7 +6,7 @@ import {setNotification} from "../../../helper/SessionHelper.js";
 export const userApi = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
         getUsers: builder.query({
-            query: () => `/user/get-all-user`,
+            query: () => `/admin/get-all-user`,
             keepUnusedDataFor: 600,
             async onQueryStarted(arg, {queryFulfilled, dispatch}){
                 try{

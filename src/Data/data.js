@@ -32,9 +32,13 @@ export const adminMenu = [
         path: "/",
         icon: FaHome,
     },
-
     {
-        name: "Doctors",
+        name: "Doctors Request",
+        path: "/admin/doctors-request",
+        icon: FaUserDoctor,
+    },
+    {
+        name: "Doctor List",
         path: "/admin/doctors",
         icon: FaUserDoctor,
     },
