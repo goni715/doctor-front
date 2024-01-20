@@ -5,9 +5,10 @@ import {setNotification} from "../../../helper/SessionHelper.js";
 
 export const userApi = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
-        getUsers: builder.query({
-            query: () => `/admin/get-all-user`,
-            keepUnusedDataFor: 600,
+        getMyProfile: builder.query({
+            query: () => `/user/get-my-profile`,
+            keepUnusedDataFor: 180,
+            providesTags: ["Profile"],
             async onQueryStarted(arg, {queryFulfilled, dispatch}){
                 try{
                     const res = await queryFulfilled;
@@ -18,16 +19,27 @@ export const userApi = apiSlice.injectEndpoints({
                 }
             },
         }),
-        getMyProfile: builder.query({
+        getUser: builder.query({
             query: () => `/user/get-my-profile`,
-            keepUnusedDataFor: 180,
-            providesTags: ["Profile"],
+            keepUnusedDataFor: 600,
+            providesTags: ["User"],
             async onQueryStarted(arg, {queryFulfilled, dispatch}){
                 try{
                     const res = await queryFulfilled;
-                    if(res?.data?.message === "success"){
-                        setNotification(res?.data?.data?.notification.length);
-                    }
+                }catch(err) {
+                    ErrorToast("Something Went Wrong!");
+                    //do nothing
+                    console.log(err);
+                }
+            },
+        }),
+        getNotification: builder.query({
+            query: () => `/user/get-my-profile`,
+            keepUnusedDataFor: 600,
+            providesTags: ["Notification"],
+            async onQueryStarted(arg, {queryFulfilled, dispatch}){
+                try{
+                    const res = await queryFulfilled;
                 }catch(err) {
                     ErrorToast("Something Went Wrong!");
                     //do nothing
@@ -40,7 +52,7 @@ export const userApi = apiSlice.injectEndpoints({
                 url: "/user/mark-all-read-notification",
                 method: "PUT",
             }),
-            invalidatesTags: ["Profile"],
+            invalidatesTags: ["Notification", "Profile"],
             async onQueryStarted(arg, {queryFulfilled}){
                 try{
                     const res = await queryFulfilled;
@@ -58,7 +70,7 @@ export const userApi = apiSlice.injectEndpoints({
                 url: "/user/delete-all-read-notification",
                 method: "PUT",
             }),
-            invalidatesTags: ["Profile"],
+            invalidatesTags: ["Notification", "Profile"],
             async onQueryStarted(arg, {queryFulfilled}){
                 try{
                     const res = await queryFulfilled;
@@ -74,4 +86,4 @@ export const userApi = apiSlice.injectEndpoints({
 })
 
 
-export const {useGetUsersQuery, useGetMyProfileQuery, useMarkAllReadMutation, useDeleteAllReadMutation} = userApi;
+export const {useGetUserQuery, useGetMyProfileQuery, useGetNotificationQuery, useMarkAllReadMutation, useDeleteAllReadMutation} = userApi;

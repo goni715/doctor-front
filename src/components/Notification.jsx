@@ -5,13 +5,15 @@ import {
     useMarkAllReadMutation
 } from "../redux/features/user/userApi.js";
 import {useNavigate} from "react-router-dom";
+import ListLoading from "./Loader/ListLoading.jsx";
 
 const Notification = () => {
     const navigate = useNavigate();
-    const {data, isLoading, } = useGetMyProfileQuery();
+    const {data, isLoading } = useGetMyProfileQuery();
     const user = data?.data;
     const [markAllRead, {isSuccess}] = useMarkAllReadMutation();
     const [deleteAllRead, {isError}] = useDeleteAllReadMutation();
+    // const isLoading = true;
 
 
     // handle read notification
@@ -99,9 +101,14 @@ const Notification = () => {
         <>
            <h4 className="pt-2 text-center text-3xl mb-3">Notification Page</h4>
             {isLoading ?
-                "Loading..."
+                (
+                    <>
+                       <ListLoading/>
+                    </>
+
+                )
                 : (
-                   <Tabs defaultActiveKey="1" items={items} />
+                    <Tabs defaultActiveKey="1" items={items}/>
                 )
             }
         </>

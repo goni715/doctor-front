@@ -6,10 +6,26 @@
   <component name="ChangeListManager">
     <list default="true" id="03f38bb9-050b-46e0-9d06-7bc984171fb4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DoctorList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DoctorList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DoctorsRequest.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DoctorsRequest.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OneNote Table Of Contents.onetoc2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DoctorList.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DoctorsRequest.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Layout/MobileNav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/MobileNav.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UserList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Sidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Notification.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Notification.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UserList.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/DoctorListPage.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/DoctorsRequestPage.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/UserListPage.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/features/api/apiSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/features/api/apiSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/features/auth/authApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/features/auth/authApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/features/doctor/doctorApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/features/doctor/doctorApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/features/user/userApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/features/user/userApi.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +36,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
+        <option value="JSX File" />
       </list>
     </option>
   </component>
@@ -29,6 +47,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2ZI9sAlMPfSJb4VUl73VokF9yBR" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -42,13 +63,16 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/F.L.G/Desktop/doctor-front-end&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2023.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -109,6 +133,17 @@
       <workItem from="1703877993037" duration="2285000" />
       <workItem from="1703880916824" duration="152000" />
       <workItem from="1703881170466" duration="371000" />
+      <workItem from="1704738598957" duration="619000" />
+      <workItem from="1705575004656" duration="20000" />
+      <workItem from="1705575026304" duration="643000" />
+      <workItem from="1705729762480" duration="243000" />
+      <workItem from="1705730051020" duration="3721000" />
+      <workItem from="1705748914737" duration="4287000" />
+      <workItem from="1705754475870" duration="2472000" />
+      <workItem from="1705758284308" duration="2329000" />
+      <workItem from="1705761949741" duration="1633000" />
+      <workItem from="1705764096234" duration="156000" />
+      <workItem from="1705764642244" duration="1484000" />
     </task>
     <servers />
   </component>

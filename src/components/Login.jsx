@@ -57,10 +57,13 @@ const Login = () => {
                         </div>
 
                         <div className="flex items-center flex-wrap">
-                            <span onClick={()=>navigate('/register')} className="text-primary underline cursor-pointer">Not a user Register here</span>
-                            <button disabled={isLoading} className="ml-3 bg-primary px-3 py-2 text-white font-bold text-md rounded-md max-[370px]:mt-3">
+                            <span onClick={() => navigate('/register')}
+                                  className="text-primary underline cursor-pointer">Not a user Register here</span>
+                            <button disabled={isLoading}
+                                    className="ml-3 bg-primary px-3 py-2 text-white font-bold text-md rounded-md max-[370px]:mt-3">
                                 {isLoading ? "Processing..." : "Login"}
                             </button>
+
                         </div>
                     </form>
                 </div>

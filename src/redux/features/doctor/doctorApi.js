@@ -68,8 +68,22 @@ export const doctorApi = apiSlice.injectEndpoints({
                 }
             }
         }),
+        getDoctor: builder.query({
+            query: () => `/user/get-doctor-profile`,
+            keepUnusedDataFor: 600,
+            providesTags: ["User"],
+            async onQueryStarted(arg, {queryFulfilled, dispatch}){
+                try{
+                    const res = await queryFulfilled;
+                }catch(err) {
+                    ErrorToast("Something Went Wrong!");
+                    //do nothing
+                    console.log(err);
+                }
+            },
+        }),
     }),
 })
 
 
-export const {useApplyDoctorMutation,useApproveDoctorMutation, useGetDoctorsQuery, useGetDoctorsRequestQuery} = doctorApi;
+export const {useApplyDoctorMutation,useApproveDoctorMutation, useGetDoctorQuery, useGetDoctorsRequestQuery} = doctorApi;

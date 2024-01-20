@@ -49,9 +49,7 @@ export const authApi = apiSlice.injectEndpoints({
                         setToken(MyToken);
                         let user = res.data['result']; //This is Object
                         let userDetails = {
-                            name: user['name'],
-                            email: user['email'],
-                            isAdmin: user['isAdmin']
+                            name: user['name']
                         }
                         setNotification(user['notification'].length)
                         setUserDetails(userDetails);
