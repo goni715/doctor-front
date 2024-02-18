@@ -1,6 +1,7 @@
 import {apiSlice} from "../api/apiSlice.js";
 import {ErrorToast, SuccessToast} from "../../../helper/ValidationHelper.js";
 import {setNotification} from "../../../helper/SessionHelper.js";
+import {SetUser} from "./userSlice.js";
 
 
 export const userApi = apiSlice.injectEndpoints({
@@ -40,6 +41,7 @@ export const userApi = apiSlice.injectEndpoints({
             async onQueryStarted(arg, {queryFulfilled, dispatch}){
                 try{
                     const res = await queryFulfilled;
+                    dispatch(SetUser(res?.data?.data))
                 }catch(err) {
                     ErrorToast("Something Went Wrong!");
                     //do nothing

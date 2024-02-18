@@ -3,12 +3,32 @@ import {FaBell} from "react-icons/fa";
 import {Link, useNavigate} from "react-router-dom";
 import {getUserDetails} from "../../helper/SessionHelper.js";
 import {useGetNotificationQuery} from "../../redux/features/user/userApi.js";
+import {useEffect, useState} from "react";
+import {io} from "socket.io-client";
 
 const Header = () => {
     const navigate = useNavigate();
     const user = getUserDetails();
-    const {data,isLoading } = useGetNotificationQuery();
+    const {data,isLoading, refetch } = useGetNotificationQuery();
     const {notification} = data?.data || {};
+    const [message, setMessage] = useState(""); //message from socket server
+    const socket = io('http://localhost:5000');
+
+
+    useEffect(()=> {
+        socket.on('receive-notification', (data) => {
+            setMessage(data)
+        });
+    },[socket]);
+
+    useEffect(()=>{
+        if(message){
+            refetch();
+        }
+    },[message, refetch])
+
+
+
 
     return (
         <>
