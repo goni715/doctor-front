@@ -1,9 +1,12 @@
 import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {useApplyDoctorMutation} from "../redux/features/doctor/doctorApi.js";
+import {TimePicker} from "antd";
+import moment from "moment";
+import {ErrorToast} from "../helper/ValidationHelper.js";
 
 const ApplyDoctor = () => {
-    const [firstName, setFirstName] = useState("hossain");
+    const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("Khan");
     const [phone, setPhone] = useState("01793837035");
     const [email, setEmail] = useState("hossain@gmail.com");
@@ -12,6 +15,8 @@ const ApplyDoctor = () => {
     const [specialization, setSpecialization] = useState("dentist");
     const [experience, setExperience] = useState("2 years");
     const [feesPerConsultation, setFeesPerConsultation] = useState(500);
+    const [startTime, setStartTime] = useState("");
+    const [endTime, setEndTime] = useState("");
 
     const [applyDoctor, {isLoading, isSuccess}] = useApplyDoctorMutation();
     const navigate = useNavigate();
@@ -24,22 +29,27 @@ const ApplyDoctor = () => {
 
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        applyDoctor({
-            email,
-            firstName,
-            lastName,
-            phone,
-            website,
-            address,
-            specialization,
-            experience,
-            feesPerConsultation,
-            "timings": {
-                "StartTime": "7pm",
-                "EndTime": "10pm"
-            }
-        })
+        e.preventDefault();
+        if(startTime==="" || endTime===""){
+            ErrorToast("Please, set Timings");
+        }
+        else{
+            applyDoctor({
+                email,
+                firstName,
+                lastName,
+                phone,
+                website,
+                address,
+                specialization,
+                experience,
+                feesPerConsultation,
+                timings: {
+                    StartTime: startTime,
+                    EndTime: endTime
+                }
+            })
+        }
     }
 
 
@@ -92,13 +102,21 @@ const ApplyDoctor = () => {
                     </div>
                     <div>
                         <label className="block pb-2 text-md" htmlFor="timings">Timings</label>
-                        <input className="w-1/2 px-4 py-2 rounded-md focus:outline-none border border-gray-400" type="text" placeholder="Start time" id="fees"/>
-                        <input className="w-1/2 px-4 py-2 rounded-md focus:outline-none border border-gray-400" type="text" placeholder="End time" id="fees"/>
+                        <TimePicker.RangePicker
+                            aria-required={"true"}
+                            format="HH:mm"
+                            className="w-full px-4 py-2 rounded-md focus:outline-none border border-gray-400"
+                            onChange={(value) => {
+                                // console.log(value);
+                                setStartTime( moment(value[0]['$d']).format("HH:mm"))
+                                setEndTime( moment(value[1]['$d']).format("HH:mm"))
+                            }}
+                        />
                     </div>
                 </div>
 
                 <div className="flex justify-end mt-3">
-                    <button disabled={isLoading} className="ml-3 bg-primary px-3 py-2 text-white font-bold text-md rounded-md">
+                    <button disabled={isLoading} className="w-1/2 bg-primary px-3 py-2 text-white font-bold text-md rounded-md">
                         {isLoading ? "Processing..." : "Submit"}
                     </button>
                 </div>

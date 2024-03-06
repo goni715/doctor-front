@@ -54,36 +54,48 @@ const Sidebar = () => {
                     </div>
 
 
-                    <div onClick={() => handleNavigate('/appointment')}
-                         className={`flex items-center gap-3 cursor-pointer duration-300 hover:pl-2 hover:text-blue-700 ${pathName === '/appointment' && "active"}`}>
-                        <LuMenuSquare size={20}/> <span className="text-lg font-bold">Appoinments</span>
-                    </div>
-
-
                     {
                         isLoading === false && (
                             <>
                             {
                                 user?.isDoctor === true ? (
-                                    <div onClick={() => handleNavigate('/doc-profile')}
-                                         className={`flex items-center gap-3 cursor-pointer duration-300 hover:pl-2 hover:text-blue-700 ${pathName === '/doc-profile' && "active"}`}>
-                                        <FaUser size={20}/> <span className="text-lg font-bold">Doc Profile</span>
-                                    </div>
+                                    <>
+                                        <div onClick={() => handleNavigate('/doctor/appointments')}
+                                             className={`flex items-center gap-3 cursor-pointer duration-300 hover:pl-2 hover:text-blue-700 ${pathName === '/appointment' && "active"}`}>
+                                            <LuMenuSquare size={20}/> <span
+                                            className="text-lg font-bold">Appoinments</span>
+                                        </div>
+                                        <div onClick={() => handleNavigate('/doc-profile')}
+                                             className={`flex items-center gap-3 cursor-pointer duration-300 hover:pl-2 hover:text-blue-700 ${pathName === '/doc-profile' && "active"}`}>
+                                            <FaUser size={20}/> <span className="text-lg font-bold">Doc Profile</span>
+                                        </div>
+
+                                    </>
+
                                 ) : (
-                                    <div onClick={() => handleNavigate('/apply-doctor')}
-                                         className={`flex items-center gap-3 cursor-pointer duration-300 hover:pl-2 hover:text-blue-700 ${pathName === '/apply-doctor' && "active"}`}>
-                                        <FaUserDoctor size={20}/> <span className="text-lg font-bold">Apply Doctor</span>
-                                   </div>
+                                    <>
+                                        <div onClick={() => handleNavigate('/appointments')}
+                                             className={`flex items-center gap-3 cursor-pointer duration-300 hover:pl-2 hover:text-blue-700 ${pathName === '/appointment' && "active"}`}>
+                                            <LuMenuSquare size={20}/> <span
+                                            className="text-lg font-bold">Appoinments</span>
+                                        </div>
+                                        <div onClick={() => handleNavigate('/apply-doctor')}
+                                             className={`flex items-center gap-3 cursor-pointer duration-300 hover:pl-2 hover:text-blue-700 ${pathName === '/apply-doctor' && "active"}`}>
+                                            <FaUserDoctor size={20}/> <span
+                                            className="text-lg font-bold">Apply Doctor</span>
+                                        </div>
+                                    </>
+
                                 )
                             }
-                      </>
+                            </>
                         )
                     }
 
 
-                <div onClick={() => logout()}
-                     className={`flex items-center gap-3 cursor-pointer duration-300 hover:pl-2 hover:text-blue-700`}>
-                    <MdOutlineLogout size={20}/>
+                    <div onClick={() => logout()}
+                         className={`flex items-center gap-3 cursor-pointer duration-300 hover:pl-2 hover:text-blue-700`}>
+                        <MdOutlineLogout size={20}/>
                     <span className="text-lg font-bold">Logout</span>
                 </div>
             </div>

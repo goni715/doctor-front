@@ -7,13 +7,19 @@
     <list default="true" id="03f38bb9-050b-46e0-9d06-7bc984171fb4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ApplyDoctor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ApplyDoctor.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Layout/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Layout/MobileNav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/MobileNav.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Notification.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Notification.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Sidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Loader/ProfileLoading.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Loader/ProfileLoading.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/DocProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/DocProfile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/DocProfileForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/DocProfileForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AppointmentPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppointmentPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/features/api/apiSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/features/api/apiSlice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/features/doctor/doctorApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/features/doctor/doctorApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/features/user/userApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/features/user/userApi.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
         <option value="JSX File" />
       </list>
     </option>
@@ -53,7 +59,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/F.L.G/Desktop/Doctor/doctor-front-end&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/F.L.G/Desktop/doctor-front-end&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -142,10 +148,47 @@
       <workItem from="1708285687948" duration="4000" />
       <workItem from="1708286266874" duration="237000" />
       <workItem from="1708286697202" duration="88000" />
+      <workItem from="1708287280599" duration="529000" />
+      <workItem from="1709578223513" duration="172000" />
+      <workItem from="1709612700320" duration="5201000" />
+      <workItem from="1709620183706" duration="2939000" />
+      <workItem from="1709630156610" duration="1914000" />
+      <workItem from="1709648515843" duration="1766000" />
+      <workItem from="1709651828111" duration="1631000" />
+      <workItem from="1709653850312" duration="157000" />
+      <workItem from="1709654190686" duration="51000" />
+      <workItem from="1709654798060" duration="2049000" />
+      <workItem from="1709661524643" duration="9000" />
+      <workItem from="1709662670974" duration="1175000" />
+      <workItem from="1709665892930" duration="1854000" />
+      <workItem from="1709694535387" duration="629000" />
+      <workItem from="1709699260706" duration="8000" />
+      <workItem from="1709702175030" duration="453000" />
+      <workItem from="1709704616495" duration="679000" />
+      <workItem from="1709705419035" duration="921000" />
+      <workItem from="1709712672642" duration="417000" />
+      <workItem from="1709713197228" duration="1064000" />
+      <workItem from="1709715034388" duration="1820000" />
+      <workItem from="1709725928177" duration="472000" />
+      <workItem from="1709727146849" duration="1339000" />
+      <workItem from="1709729203549" duration="491000" />
+      <workItem from="1709729850371" duration="77000" />
+      <workItem from="1709729975132" duration="94000" />
+      <workItem from="1709730389034" duration="280000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/BookAppointment/AppointmentDetails.jsx</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

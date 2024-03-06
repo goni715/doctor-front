@@ -1,19 +1,18 @@
 import Layout from "../components/Layout/Layout.jsx";
-import Loader from "../components/Loader.jsx";
+import DoctorList from "../components/DoctorList/DoctorList.jsx";
+import {useLocation} from "react-router-dom";
+import useScrollTop from "../hooks/useScrollTop.jsx";
 
 const HomePage = () => {
+    const { pathname } = useLocation();
+    const scrolTop = useScrollTop(pathname);
+
     return (
         <>
            <>
                <Layout>
-                   <h1>This is Home Page</h1>
-                   {/*<section className="pt-6 pb-20 min-h-[calc(100vh_-_157px)]">*/}
-                   {/*    <div className="grid grid-cols-12 gap-4 max-w-7xl mx-auto px-5 lg:px-0 min-h-[300px]">*/}
-                   {/*        <Loader/>*/}
-                   {/*    </div>*/}
-                   {/*</section>*/}
-
-
+                   <h1 className="text-center text-3xl font-bold font-serif mb-3">Home Page</h1>
+                   <DoctorList/>
                </Layout>
            </>
         </>

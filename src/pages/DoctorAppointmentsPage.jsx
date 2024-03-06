@@ -1,19 +1,20 @@
 import Layout from "../components/Layout/Layout.jsx";
-import Notification from "../components/Notification.jsx";
+import DoctorAppointments from "../components/DoctorAppointments/DoctorAppointments.jsx";
 import {useLocation} from "react-router-dom";
 import useScrollTop from "../hooks/useScrollTop.jsx";
 
-const NotificationPage = () => {
+
+const DoctorAppointmentsPage = () => {
     const { pathname } = useLocation();
     const scrolTop = useScrollTop(pathname);
 
     return (
         <>
             <Layout>
-                <Notification/>
+                <DoctorAppointments/>
             </Layout>
         </>
     );
 };
 
-export default NotificationPage;
+export default DoctorAppointmentsPage;

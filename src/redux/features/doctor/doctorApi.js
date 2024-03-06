@@ -25,8 +25,22 @@ export const doctorApi = apiSlice.injectEndpoints({
                 }
             }
         }),
-        getDoctor: builder.query({
-            query: () => `/user/get-doctor-profile`,
+        getDoctorByUserId: builder.query({
+            query: () => `/doctor/get-doctor-by-user-id`,
+            keepUnusedDataFor: 600,
+            providesTags: ["Doctor"],
+            async onQueryStarted(arg, {queryFulfilled, dispatch}){
+                try{
+                    const res = await queryFulfilled;
+                }catch(err) {
+                    ErrorToast("Something Went Wrong!");
+                    //do nothing
+                    console.log(err);
+                }
+            },
+        }),
+        getDoctorById: builder.query({
+            query: (id) => `/doctor/get-doctor/${id}`,
             keepUnusedDataFor: 600,
             providesTags: ["User"],
             async onQueryStarted(arg, {queryFulfilled, dispatch}){
@@ -39,8 +53,45 @@ export const doctorApi = apiSlice.injectEndpoints({
                 }
             },
         }),
+        getDoctorsForUser: builder.query({
+            query: () => `/doctor/get-doctors-for-user`,
+            keepUnusedDataFor: 600,
+            providesTags: ["Doctors"],
+            async onQueryStarted(arg, {queryFulfilled, dispatch}){
+                try{
+                    const res = await queryFulfilled;
+                }catch(err) {
+                    ErrorToast("Something Went Wrong!");
+                    //do nothing
+                    console.log(err);
+                }
+            },
+        }),
+        updateDoctor: builder.mutation({
+            query: ({id,data}) => ({
+                url: `/doctor/update-doctor/${id}`,
+                method: "PUT",
+                body: data
+            }),
+            invalidatesTags: ["Doctor"],
+            async onQueryStarted(arg, {queryFulfilled}){
+                try{
+                    const res = await queryFulfilled;
+                    if(res?.data?.message === "success"){
+                        SuccessToast("Update Success");
+                    }
+                }catch(err) {
+                    console.log(err)
+                    if(err?.error?.data?.data?.keyPattern){
+                        if(err?.error?.data?.data?.keyPattern['slug'] === 1){
+                            ErrorToast("Failld! This Category Already Existed")
+                        }
+                    }
+                }
+            }
+        }),
     }),
 })
 
 
-export const {useApplyDoctorMutation, useGetDoctorQuery} = doctorApi;
+export const {useApplyDoctorMutation,useUpdateDoctorMutation, useGetDoctorByUserIdQuery,useGetDoctorByIdQuery, useGetDoctorsForUserQuery} = doctorApi;

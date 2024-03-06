@@ -3,8 +3,8 @@ import {ErrorToast} from "../../../helper/ValidationHelper.js";
 import {getToken} from "../../../helper/SessionHelper.js";
 
 const baseQuery = fetchBaseQuery({
-    // baseUrl: "https://doctor-api-goni.vercel.app/api",
-    baseUrl: "http://localhost:5000/api",
+    baseUrl: "https://doctor-api-goni.vercel.app/api",
+    // baseUrl: "http://localhost:5000/api",
     prepareHeaders: async (headers, {getState, endpoint}) =>{
         if(getToken()){
             headers.set("token", getToken());
@@ -24,7 +24,7 @@ export const apiSlice = createApi({
         }
         return result;
     },
-    tagTypes: ["Notification","User", "Profile","Users", "Doctors", "Requests"], //TagS WhiteLists
+    tagTypes: ["Notification","User","Doctor", "Profile","Users", "Doctors", "Requests", "Appointments", "DoctorAppointments"], //TagS WhiteLists
     endpoints: (builder) => ({}),
 })
 

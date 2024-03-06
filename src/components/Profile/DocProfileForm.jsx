@@ -1,6 +1,9 @@
-import {useEffect, useState} from "react";
-import {useNavigate} from "react-router-dom";
-import {useApplyDoctorMutation} from "../../redux/features/doctor/doctorApi.js";
+import {useState} from "react";
+import {useUpdateDoctorMutation} from "../../redux/features/doctor/doctorApi.js";
+import {TimePicker} from "antd";
+import moment from 'moment';
+import dayjs from "dayjs";
+import {ErrorToast} from "../../helper/ValidationHelper.js";
 
 
 const DocProfileForm = ({data}) => {
@@ -16,8 +19,10 @@ const DocProfileForm = ({data}) => {
         experience:initialExperience,
         feesPerConsultation:initialFeesPerConsultation,
         website:initialWebsite,
+        timings
     } = data || {};
 
+    const {StartTime, EndTime} = timings || {};
     const [firstName, setFirstName] = useState(initialFirstName);
     const [lastName, setLastName] = useState(initialLastName);
     const [phone, setPhone] = useState(initialPhone);
@@ -27,41 +32,49 @@ const DocProfileForm = ({data}) => {
     const [specialization, setSpecialization] = useState(initialSpecialization);
     const [experience, setExperience] = useState(initialExperience);
     const [feesPerConsultation, setFeesPerConsultation] = useState(initialFeesPerConsultation);
-
-    const [applyDoctor, {isLoading, isSuccess}] = useApplyDoctorMutation();
-    const navigate = useNavigate();
-
-    useEffect(()=>{
-        if(isSuccess){
-            navigate('/');
-        }
-    },[navigate,isSuccess]);
+    const [startTime, setStartTime] = useState(StartTime);
+    const [endTime, setEndTime] = useState(EndTime);
+    const [updateDoctor, {isLoading, isSuccess}] = useUpdateDoctorMutation();
 
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        applyDoctor({
-            email,
-            firstName,
-            lastName,
-            phone,
-            website,
-            address,
-            specialization,
-            experience,
-            feesPerConsultation,
-            "timings": {
-                "StartTime": "7pm",
-                "EndTime": "10pm"
-            }
-        })
+        if(startTime==="" || endTime===""){
+            ErrorToast("Please, set Timings");
+        }
+        else{
+            updateDoctor({
+                id:_id,
+                data: {
+                    email,
+                    firstName,
+                    lastName,
+                    phone,
+                    website,
+                    address,
+                    specialization,
+                    experience,
+                    feesPerConsultation,
+                    timings: {
+                        StartTime: startTime,
+                        EndTime: endTime
+                    }
+                }
+            })
+        }
+
     }
+
+    const defaultValue = [
+        moment(StartTime, 'HH:mm'), // Start time
+        moment(EndTime, 'HH:mm')  // End time
+    ];
 
 
 
     return (
         <>
-            <form onSubmit={handleSubmit} className="pb-6">
+            <form onSubmit={handleSubmit} className="px-6 pb-6 shadow">
                 <h3 className="text-2xl my-3">Personal Details:</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div>
@@ -106,14 +119,26 @@ const DocProfileForm = ({data}) => {
                     </div>
                     <div>
                         <label className="block pb-2 text-md" htmlFor="timings">Timings</label>
-                        <input className="w-1/2 px-4 py-2 rounded-md focus:outline-none border border-gray-400" type="text" placeholder="Start time" id="fees"/>
-                        <input className="w-1/2 px-4 py-2 rounded-md focus:outline-none border border-gray-400" type="text" placeholder="End time" id="fees"/>
+                        <TimePicker.RangePicker
+                            key={Date.now()}
+                            aria-required={"true"}
+                            format="HH:mm"
+                            className="w-full px-4 py-2 rounded-md focus:outline-none border border-gray-400"
+                            required
+                            defaultValue={defaultValue}
+                            // defaultValue={[dayjs(StartTime, 'HH:mm'), dayjs(EndTime, 'HH:mm')]}
+                            onChange={(value) => {
+                                // console.log(value);
+                                setStartTime( moment(value[0]['$d']).format("HH:mm"))
+                                setEndTime( moment(value[1]['$d']).format("HH:mm"))
+                            }}
+                        />
                     </div>
                 </div>
 
                 <div className="flex justify-end mt-3">
-                    <button disabled={isLoading} className="ml-3 bg-primary px-3 py-2 text-white font-bold text-md rounded-md">
-                        {isLoading ? "Processing..." : "Update"}
+                    <button disabled={isLoading} className="w-1/2 bg-primary px-3 py-2 text-white font-bold text-md rounded-md">
+                        {isLoading ? "Processing..." : "Save Changes"}
                     </button>
                 </div>
             </form>
