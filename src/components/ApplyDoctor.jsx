@@ -7,14 +7,14 @@ import {ErrorToast} from "../helper/ValidationHelper.js";
 
 const ApplyDoctor = () => {
     const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("Khan");
-    const [phone, setPhone] = useState("01793837035");
-    const [email, setEmail] = useState("hossain@gmail.com");
-    const [website, setWebsite] = useState("https://osman-goni.netlify.app/");
-    const [address, setAddress] = useState("Saidpur");
-    const [specialization, setSpecialization] = useState("dentist");
-    const [experience, setExperience] = useState("2 years");
-    const [feesPerConsultation, setFeesPerConsultation] = useState(500);
+    const [lastName, setLastName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [email, setEmail] = useState("");
+    const [website, setWebsite] = useState("");
+    const [address, setAddress] = useState("");
+    const [specialization, setSpecialization] = useState("");
+    const [experience, setExperience] = useState("");
+    const [feesPerConsultation, setFeesPerConsultation] = useState(0);
     const [startTime, setStartTime] = useState("");
     const [endTime, setEndTime] = useState("");
 
