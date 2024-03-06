@@ -3,13 +3,8 @@ import {ErrorToast} from "../../../helper/ValidationHelper.js";
 import {getToken} from "../../../helper/SessionHelper.js";
 
 const baseQuery = fetchBaseQuery({
-<<<<<<< HEAD
     baseUrl: "https://doctor-api-goni.vercel.app/api",
     // baseUrl: "http://localhost:5000/api",
-=======
-     baseUrl: "https://doctor-api-goni.vercel.app/api",
-   // baseUrl: "http://localhost:5000/api",
->>>>>>> 7c11d499bf5a8303b4859cd4863461a17a72e52d
     prepareHeaders: async (headers, {getState, endpoint}) =>{
         if(getToken()){
             headers.set("token", getToken());
